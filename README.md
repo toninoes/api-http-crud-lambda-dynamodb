@@ -41,9 +41,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| account | Your AWS Account number | `string` | n/a | yes |
 | environment | Environment Name | `string` | n/a | yes |
 | profile | Profile name configured in .aws | `string` | n/a | yes |
 | project | Project Name | `string` | n/a | yes |
+| region | AWS region to deploy this templates | `string` | n/a | yes |
 
 ## Outputs
 
