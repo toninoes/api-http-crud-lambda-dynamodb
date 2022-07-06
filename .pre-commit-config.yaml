@@ -9,3 +9,4 @@ repos:
         - --args=--loglevel=warn
         - --args=--disable-rule=terraform_module_pinned_source
         - --args=--module
+#    - id: terraform_tfsec
