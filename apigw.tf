@@ -23,10 +23,3 @@ resource "aws_apigatewayv2_route" "this" {
   route_key = each.key
   target    = "integrations/${aws_apigatewayv2_integration.this.id}"
 }
-
-resource "aws_lambda_permission" "this" {
-  action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.this.function_name
-  principal     = "apigateway.amazonaws.com"
-  source_arn = "${aws_apigatewayv2_api.this.execution_arn}/*/*"
-}

@@ -78,3 +78,10 @@ data "archive_file" "this" {
   source_file = "src/index.js"
   output_path = "src/index.zip"
 }
+
+resource "aws_lambda_permission" "this" {
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.this.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn = "${aws_apigatewayv2_api.this.execution_arn}/*/*"
+}
