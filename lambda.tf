@@ -52,12 +52,12 @@ resource "aws_iam_role" "this" {
   name = "http-crud-tutorial-role"
 
   assume_role_policy = jsonencode({
-    Version   = "2012-10-17"
+    Version = "2012-10-17"
     Statement = [
       {
-        Action    = "sts:AssumeRole"
-        Effect    = "Allow"
-        Sid       = ""
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Sid    = ""
         Principal = {
           Service = "lambda.amazonaws.com"
         }
@@ -83,5 +83,5 @@ resource "aws_lambda_permission" "this" {
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.this.function_name
   principal     = "apigateway.amazonaws.com"
-  source_arn = "${aws_apigatewayv2_api.this.execution_arn}/*/*"
+  source_arn    = "${aws_apigatewayv2_api.this.execution_arn}/*/*"
 }

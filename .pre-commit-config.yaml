@@ -1,0 +1,11 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.62.3
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_validate
+    - id: terraform_tflint
+      args:
+        - --args=--loglevel=warn
+        - --args=--disable-rule=terraform_module_pinned_source
+        - --args=--module
