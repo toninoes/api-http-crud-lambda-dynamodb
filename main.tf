@@ -18,7 +18,7 @@ terraform {
 
 locals {
   name   = "api-http-crud-lambda-dynamodb"
-  region = "eu-west-1"
+  region = var.region
   tags = {
     project     = var.project
     environment = var.environment

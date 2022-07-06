@@ -12,3 +12,13 @@ variable "profile" {
   type        = string
   description = "Profile name configured in .aws"
 }
+
+variable "account" {
+  type        = string
+  description = "Your AWS Account number"
+}
+
+variable "region" {
+  type        = string
+  description = "AWS region to deploy this templates"
+}

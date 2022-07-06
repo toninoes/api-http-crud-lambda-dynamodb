@@ -24,12 +24,12 @@ resource "aws_iam_policy" "this" {
           "dynamodb:Scan",
           "dynamodb:UpdateItem"
         ],
-        "Resource" : "arn:aws:dynamodb:eu-west-1:208730474834:table/*"
+        "Resource" : "arn:aws:dynamodb:${var.region}:${var.account}:table/*"
       },
       {
         "Effect" : "Allow",
         "Action" : "logs:CreateLogGroup",
-        "Resource" : "arn:aws:logs:eu-west-1:208730474834:*"
+        "Resource" : "arn:aws:logs:${var.region}:${var.account}:*"
       },
       {
         "Effect" : "Allow",
@@ -38,7 +38,7 @@ resource "aws_iam_policy" "this" {
           "logs:PutLogEvents"
         ],
         "Resource" : [
-          "arn:aws:logs:eu-west-1:208730474834:log-group:/aws/lambda/http-crud-tutorial-function:*"
+          "arn:aws:logs:${var.region}:${var.account}:log-group:/aws/lambda/http-crud-tutorial-function:*"
         ]
       }
     ]
